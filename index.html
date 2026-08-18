@@ -481,26 +481,9 @@
   /* the WhatsApp-primary + tappable-phone contact row, above the form */
   .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch}
   .visit-grid aside{display:flex;flex-direction:column}
-  .visit-grid aside .contact-card{flex:1}
-  .visit-grid .form{display:flex;flex-direction:column}
-  .visit-grid .form .field:has(textarea){flex:1;display:flex;flex-direction:column}
-  .visit-grid .form .field:has(textarea) textarea{flex:1}
-  .form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;
-    box-shadow:0 16px 34px -26px rgba(30,77,51,.42)}
-  .field{margin-bottom:17px}
-  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:0.03em;color:var(--ink);margin-bottom:8px}
-  .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);
-    background:var(--paper);border:1px solid var(--green-hair);border-radius:8px;padding:13px 14px;min-height:50px}
-  .field textarea{min-height:92px;resize:vertical;line-height:1.5}
-  .field select{appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2320241F' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:right 14px center}
-  .field input::placeholder,.field textarea::placeholder{color:var(--ink-soft)}
-  .form .btn-cta{width:100%;margin-top:4px}
-  .form-ok,.form-err{display:none;margin-top:14px;background:var(--tint);border:1px solid var(--marigold);
-    border-radius:10px;padding:15px;color:var(--ink);font-size:15px;line-height:1.5}
-  .form-err{border-color:var(--ink-soft)}
-  .form-ok.show,.form-err.show{display:block}
+  .visit-grid .contact-card{display:flex;flex-direction:column}
+  .contact-lead{font-size:15px;color:var(--ink-soft);line-height:1.55;margin-top:10px}
+  .btn-wa{display:flex;width:100%;margin:18px 0 4px}
   .contact-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
   .contact-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;line-height:1.55;color:var(--ink-soft)}
   .contact-card h3{font-size:17px;margin-bottom:6px;color:var(--ink)}
@@ -975,45 +958,16 @@
     <h2 id="visit-h">Come see the home in person.</h2>
     <p class="visit-intro">The best way to choose a daycare is to stand in it. A visit takes about thirty minutes on a weekday afternoon: you meet me, you see the rooms, and you can ask anything. Bring the baby.</p>
     <div class="visit-grid">
-      <form class="form" id="visitForm" name="visit-en" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" aria-label="Schedule a visit">
-        <input type="hidden" name="form-name" value="visit-en">
-        <p hidden><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="field">
-          <label for="f-name">Your name</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="First and last" required>
-        </div>
-        <div class="field">
-          <label for="f-age">Child's age</label>
-          <select id="f-age" name="age">
-            <option>0 to 6 months (waitlist)</option>
-            <option selected>7 to 12 months</option>
-            <option>13 to 24 months</option>
-            <option>2 to 3 years</option>
-            <option>3 to 5 years</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-prog">Program you are considering</label>
-          <select id="f-prog" name="program">
-            <option>Full-time</option>
-            <option>Half-time or part-time</option>
-            <option>Drop-in</option>
-            <option>Summer camp</option>
-            <option>Waitlist only</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-contact">Your phone or email</label>
-          <input id="f-contact" name="contact" type="text" autocomplete="tel email" placeholder="So I can reply to you" required>
-        </div>
-        <div class="field">
-          <label for="f-note">Anything you would like me to know <span style="color:var(--ink-soft);font-weight:400">(optional)</span></label>
-          <textarea id="f-note" name="note" placeholder="Questions, your child's routine, or when you hope to start"></textarea>
-        </div>
-        <button class="btn btn-cta" type="submit">Schedule a visit</button>
-        <p class="form-ok" id="formOk" role="status">Thank you. I will get back to you within two business days, usually sooner.</p>
-        <p class="form-err" id="formErr" role="status">That did not go through. Please text or WhatsApp me at 415-218-2864 and I will reply there.</p>
-      </form>
+      <div class="contact-card">
+        <h3>Visit Julie · <span class="zh" lang="zh">联系方式</span></h3>
+        <p class="contact-lead">Message me with your child's age and when you hope to start, and I will tell you what is open.</p>
+        <a class="btn btn-cta btn-wa" href="https://wa.me/14152182864" target="_blank" rel="noopener noreferrer">Message me on WhatsApp</a>
+        <div class="contact-row"><div class="k">Address</div><div class="v">1081 Candlewood Avenue, Sunnyvale, CA 94089</div></div>
+        <div class="contact-row"><div class="k">Phone</div><div class="v"><a href="tel:+14152182864">(415) 218-2864</a> · text preferred</div></div>
+        <div class="contact-row"><div class="k">Email</div><div class="v"><a href="mailto:juliewangdaycare@gmail.com">juliewangdaycare@gmail.com</a></div></div>
+        <div class="contact-row"><div class="k">Hours</div><div class="v">8:30 am to 6:00 pm, Monday to Friday</div></div>
+        <p class="contact-note">During the day I am with the children, so I cannot answer calls in real time. A text or WhatsApp message works best; I reply once the children are settled.</p>
+      </div>
       <aside>
         <figure class="locmap">
     <svg viewBox="0 0 640 360" role="img" aria-label="A map of the Sunnyvale neighborhood where Julie's Daycare is located">
@@ -1042,14 +996,6 @@
     </svg>
     <figcaption class="locmap-cap"><div class="place">Sunnyvale, California<span>A licensed home daycare</span></div><a class="btn-map" href="https://www.google.com/maps/dir/?api=1&destination=1081+Candlewood+Avenue+Sunnyvale+CA+94089" target="_blank" rel="noopener noreferrer">Get directions</a></figcaption>
   </figure>
-        <div class="contact-card">
-          <h3>Visit Julie · <span class="zh" lang="zh">联系方式</span></h3>
-          <div class="contact-row"><div class="k">Address</div><div class="v">1081 Candlewood Avenue, Sunnyvale, CA 94089</div></div>
-          <div class="contact-row"><div class="k">Phone</div><div class="v"><a href="tel:+14152182864">(415) 218-2864</a> · text preferred</div></div>
-          <div class="contact-row"><div class="k">Email</div><div class="v"><a href="mailto:juliewangdaycare@gmail.com">juliewangdaycare@gmail.com</a></div></div>
-          <div class="contact-row"><div class="k">Hours</div><div class="v">8:30 am to 6:00 pm, Monday to Friday</div></div>
-          <p class="contact-note">During the day I am with the children, so I cannot answer calls in real time. A text or WhatsApp message works best; I reply once the children are settled.</p>
-        </div>
       </aside>
     </div>
   </div>

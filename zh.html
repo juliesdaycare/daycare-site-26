@@ -479,26 +479,9 @@
   /* the WhatsApp-primary + tappable-phone contact row, above the form */
   .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:stretch}
   .visit-grid aside{display:flex;flex-direction:column}
-  .visit-grid aside .contact-card{flex:1}
-  .visit-grid .form{display:flex;flex-direction:column}
-  .visit-grid .form .field:has(textarea){flex:1;display:flex;flex-direction:column}
-  .visit-grid .form .field:has(textarea) textarea{flex:1}
-  .form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;
-    box-shadow:0 16px 34px -26px rgba(30,77,51,.42)}
-  .field{margin-bottom:17px}
-  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:0.03em;color:var(--ink);margin-bottom:8px}
-  .field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:16px;color:var(--ink);
-    background:var(--paper);border:1px solid var(--green-hair);border-radius:8px;padding:13px 14px;min-height:50px}
-  .field textarea{min-height:92px;resize:vertical;line-height:1.65}
-  .field select{appearance:none;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2320241F' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-    background-repeat:no-repeat;background-position:right 14px center}
-  .field input::placeholder,.field textarea::placeholder{color:var(--ink-soft)}
-  .form .btn-cta{width:100%;margin-top:4px}
-  .form-ok,.form-err{display:none;margin-top:14px;background:var(--tint);border:1px solid var(--marigold);
-    border-radius:10px;padding:15px;color:var(--ink);font-size:15px;line-height:1.65}
-  .form-err{border-color:var(--ink-soft)}
-  .form-ok.show,.form-err.show{display:block}
+  .visit-grid .contact-card{display:flex;flex-direction:column}
+  .contact-lead{font-size:15px;color:var(--ink-soft);line-height:1.55;margin-top:10px}
+  .btn-wa{display:flex;width:100%;margin:18px 0 4px}
   .contact-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px}
   .contact-note{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;line-height:1.55;color:var(--ink-soft)}
   .contact-card h3{font-size:17px;margin-bottom:6px;color:var(--ink)}
@@ -975,45 +958,16 @@
     <h2 id="visit-h">亲自来看看这个家。</h2>
     <p class="visit-intro">挑选日托，最好的办法就是亲自站进来看看。工作日下午来一趟，大约 30 分钟：你能见到我、看看各个房间，也可以问任何问题。把宝宝也带上。</p>
     <div class="visit-grid">
-      <form class="form" id="visitForm" name="visit-zh" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" aria-label="预约参观">
-        <input type="hidden" name="form-name" value="visit-zh">
-        <p hidden><label>请留空 <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="field">
-          <label for="f-name">你的名字</label>
-          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="姓和名" required>
-        </div>
-        <div class="field">
-          <label for="f-age">孩子的年龄</label>
-          <select id="f-age" name="age">
-            <option>0 到 6 个月（候补）</option>
-            <option selected>7 到 12 个月</option>
-            <option>13 到 24 个月</option>
-            <option>2 到 3 岁</option>
-            <option>3 到 5 岁</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-prog">你考虑的项目</label>
-          <select id="f-prog" name="program">
-            <option>全天</option>
-            <option>半天或部分时间</option>
-            <option>临时托</option>
-            <option>夏令营</option>
-            <option>仅候补名单</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="f-contact">你的电话或邮箱</label>
-          <input id="f-contact" name="contact" type="text" autocomplete="tel email" placeholder="方便我回复你" required>
-        </div>
-        <div class="field">
-          <label for="f-note">还有什么想让我知道的 <span style="color:var(--ink-soft);font-weight:400">（可选）</span></label>
-          <textarea id="f-note" name="note" placeholder="你的问题、孩子的作息，或希望什么时候入托"></textarea>
-        </div>
-        <button class="btn btn-cta" type="submit">预约参观</button>
-        <p class="form-ok" id="formOk" role="status">谢谢你。我会在 2 个工作日内回复你，通常会更快。</p>
-        <p class="form-err" id="formErr" role="status">没有发送成功。请发短信或用 WhatsApp 联系我：415-218-2864，我会在那里回复你。</p>
-      </form>
+      <div class="contact-card">
+        <h3>联系 Julie · 到访信息</h3>
+        <p class="contact-lead">发消息告诉我孩子的年龄，和你希望入托的时间，我会告诉你现在有什么名额。</p>
+        <a class="btn btn-cta btn-wa" href="https://wa.me/14152182864" target="_blank" rel="noopener noreferrer">用 WhatsApp 联系我</a>
+        <div class="contact-row"><div class="k">地址</div><div class="v">1081 Candlewood Avenue, Sunnyvale, CA 94089</div></div>
+        <div class="contact-row"><div class="k">电话</div><div class="v"><a href="tel:+14152182864">(415) 218-2864</a> · 短信优先</div></div>
+        <div class="contact-row"><div class="k">邮箱</div><div class="v"><a href="mailto:juliewangdaycare@gmail.com">juliewangdaycare@gmail.com</a></div></div>
+        <div class="contact-row"><div class="k">时间</div><div class="v">上午 8:30 到下午 6:00，周一至周五</div></div>
+        <p class="contact-note">白天我都和孩子们在一起，电话常常来不及接。发短信或 WhatsApp 最方便，等孩子们安顿好我就会回复。</p>
+      </div>
       <aside>
         <figure class="locmap">
     <svg viewBox="0 0 640 360" role="img" aria-label="Julie's Daycare in Sunnyvale">
@@ -1042,14 +996,6 @@
     </svg>
     <figcaption class="locmap-cap"><div class="place">加州 Sunnyvale<span>持牌家庭日托</span></div><a class="btn-map" href="https://www.google.com/maps/dir/?api=1&destination=1081+Candlewood+Avenue+Sunnyvale+CA+94089" target="_blank" rel="noopener noreferrer">获取路线</a></figcaption>
   </figure>
-        <div class="contact-card">
-          <h3>联系 Julie · 到访信息</h3>
-          <div class="contact-row"><div class="k">地址</div><div class="v">1081 Candlewood Avenue, Sunnyvale, CA 94089</div></div>
-          <div class="contact-row"><div class="k">电话</div><div class="v"><a href="tel:+14152182864">(415) 218-2864</a> · 短信优先</div></div>
-          <div class="contact-row"><div class="k">邮箱</div><div class="v"><a href="mailto:juliewangdaycare@gmail.com">juliewangdaycare@gmail.com</a></div></div>
-          <div class="contact-row"><div class="k">时间</div><div class="v">上午 8:30 到下午 6:00，周一至周五</div></div>
-          <p class="contact-note">白天我都和孩子们在一起，电话常常来不及接。发短信或 WhatsApp 最方便，等孩子们安顿好我就会回复。</p>
-        </div>
       </aside>
     </div>
   </div>
