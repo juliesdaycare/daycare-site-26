@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://richardchoism.github.io/julie-daycare-preview/sitemap.xml

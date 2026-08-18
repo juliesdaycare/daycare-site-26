@@ -1,0 +1,5 @@
+# PREVIEW MODE - the site is intentionally hidden from search engines.
+# At launch: replace this file with robots.launch.txt and remove the
+# <meta name="robots" content="noindex, nofollow"> tag from both pages.
+User-agent: *
+Disallow: /
